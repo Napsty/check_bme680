@@ -1,5 +1,6 @@
 /* Copyright (C) 2017 alexh.name */
 /* I2C code by twartzek 2017 */
+/* Adjustments for logging by Napsty 2020 */
 
 /*
  * Read the BME680 sensor with the BSEC library by running an endless loop in
