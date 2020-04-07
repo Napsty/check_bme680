@@ -58,12 +58,12 @@ lastresult=$(tail -n 1 ${bsec_logfile} | sed "s/\n//g" | sed "s/\r//g")
 sensor_time=$(echo "$lastresult"|awk -F';' '{print $1}')
 sensor_iaq_accuracy=$(echo "$lastresult"|awk -F';' '{print $2}')
 sensor_iaq_value=$(echo "$lastresult"|awk -F';' '{print $3}')
-sensor_iaq_temperature=$(echo "$lastresult"|awk -F';' '{print $4}')
-sensor_iaq_humidity=$(echo "$lastresult"|awk -F';' '{print $5}')
-sensor_iaq_pressure=$(echo "$lastresult"|awk -F';' '{print $6}')
-sensor_iaq_gas=$(echo "$lastresult"|awk -F';' '{print $7}')
-sensor_iaq_co2=$(echo "$lastresult"|awk -F';' '{print $8}')
-sensor_iaq_bvoc=$(echo "$lastresult"|awk -F';' '{print $9}')
+sensor_temperature=$(echo "$lastresult"|awk -F';' '{print $4}')
+sensor_humidity=$(echo "$lastresult"|awk -F';' '{print $5}')
+sensor_pressure=$(echo "$lastresult"|awk -F';' '{print $6}')
+sensor_gas=$(echo "$lastresult"|awk -F';' '{print $7}')
+sensor_co2=$(echo "$lastresult"|awk -F';' '{print $8}')
+sensor_bvoc=$(echo "$lastresult"|awk -F';' '{print $9}')
 
-echo "BME680 OK - Air Quality is good (${sensor_iaq_value}), Gas: ${sensor_gas}ohm, Temp: ${sensor_temperature} C, Humidity: ${sensor_humidity}%, Pressure: ${sensor_pressure}hPa, CO2: ${sensor_co2}, bVOCe: ${sensor_bvoc} |iaq=${sensor_iaq_value};;;0;500 gas=${sensor_gas};;;; temp=${sensor_temperature};;;; humidity=${sensor_humidity};;;0;100 pressure=${sensor_pressure};;;; iaq_accuracy=${sensor_iaq_accuracy};;;0;3"
+echo "BME680 OK - Air Quality is good (${sensor_iaq_value}), Gas: ${sensor_gas}ohm, Temp: ${sensor_temperature} C, Humidity: ${sensor_humidity}%, Pressure: ${sensor_pressure}hPa, CO2: ${sensor_co2}, bVOCe: ${sensor_bvoc} |iaq_score=${sensor_iaq_value};;;0;500 gas=${sensor_gas};;;; temp=${sensor_temperature};;;; humidity=${sensor_humidity};;;0;100 pressure=${sensor_pressure};;;; iaq_accuracy=${sensor_iaq_accuracy};;;0;3"
 exit $STATE_OK
