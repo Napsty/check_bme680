@@ -54,7 +54,7 @@ if ! [[ -f $bsec_logfile ]]; then
 fi
 ################################################################################
 # Log parsing
-lastresult=$(tail -n 1 ${bsec_logfile} | sed "s/\n//g|/\r//g")
+lastresult=$(tail -n 1 ${bsec_logfile} | sed "s/\n//g" | sed "s/\r//g")
 sensor_time=$(echo "$lastresult"|awk -F';' '{print $1}')
 sensor_iaq_accuracy=$(echo "$lastresult"|awk -F';' '{print $2}')
 sensor_iaq_value=$(echo "$lastresult"|awk -F';' '{print $3}')
