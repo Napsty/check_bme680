@@ -1,0 +1,3 @@
+Download the Bosch Sensortec Environmental Cluster (BSEC) software from https://www.bosch-sensortec.com/software-tools/software/bsec/. The download should be a ZIP file (example name: bsec_1-4-7-4_generic_release.zip).
+
+Unzip the bsec zip file and place the contents into this `src` directory.
