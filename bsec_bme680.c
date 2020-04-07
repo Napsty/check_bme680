@@ -205,9 +205,9 @@ void output_ready(int64_t timestamp, float iaq, uint8_t iaq_accuracy,
   // 2020-04-07 14:53:41;3;32.76;20.55;31.16;960.75;957676;622.672485351562500;0.7948874831199645996093750
 
   FILE * fp;
-  fp = fopen("logfile_path","w");
+  fp = fopen("logfile_path","a+");
 
-  fprintf(fp, "%d-%02d-%02d %02d:%02d:%02d,", tm.tm_year + 1900,tm.tm_mon + 1,
+  fprintf(fp, "%d-%02d-%02d %02d:%02d:%02d", tm.tm_year + 1900,tm.tm_mon + 1,
          tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec); /* localtime */
   fprintf(fp, ";%d;%.2f;%.2f;%.2f;%.2f;%.0f;%.15f;%.25f", iaq_accuracy,iaq,temperature,humidity,pressure / 100,gas,co2_equivalent,breath_voc_equivalent);
   //printf(",%" PRId64, timestamp);
