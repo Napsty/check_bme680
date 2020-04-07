@@ -65,5 +65,5 @@ sensor_gas=$(echo "$lastresult"|awk -F';' '{print $7}')
 sensor_co2=$(echo "$lastresult"|awk -F';' '{print $8}')
 sensor_bvoc=$(echo "$lastresult"|awk -F';' '{print $9}')
 
-echo "BME680 OK - Air Quality is good (${sensor_iaq_value}), Gas: ${sensor_gas}ohm, Temp: ${sensor_temperature} C, Humidity: ${sensor_humidity}%, Pressure: ${sensor_pressure}hPa, CO2: ${sensor_co2}, bVOCe: ${sensor_bvoc} |iaq_score=${sensor_iaq_value};;;0;500 gas=${sensor_gas};;;; temp=${sensor_temperature};;;; humidity=${sensor_humidity};;;0;100 pressure=${sensor_pressure};;;; bvoce=${sensor_bvoc};;;; iaq_accuracy=${sensor_iaq_accuracy};;;0;3"
+echo "BME680 OK - Air Quality is good (${sensor_iaq_value}), Gas: ${sensor_gas}ohm, Temp: ${sensor_temperature} C, Humidity: ${sensor_humidity}%, Pressure: ${sensor_pressure}hPa, CO2: ${sensor_co2}, bVOCe: ${sensor_bvoc} |iaq_score=${sensor_iaq_value};;;0;500 gas=${sensor_gas};;;; temp=${sensor_temperature};;;; humidity=${sensor_humidity};;;0;100 pressure=${sensor_pressure};;;; co2=${sensor_co2};;;; bvoce=${sensor_bvoc};;;; iaq_accuracy=${sensor_iaq_accuracy};;;0;3"
 exit $STATE_OK
