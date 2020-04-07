@@ -8,5 +8,7 @@ The BME680 sensor needs to be constantly queried in order to calibrate itself an
 
 This binary was created by GitHub user alexh-name. The repository can be found on https://github.com/alexh-name/bsec_bme680_linux. The C file in this repository was slightly adjusted, mainly to log the results into a log file.
 
+To compile bsec_bme680, the Bosch BSEC libary (a closed-source library) is needed and needs to be placed in the `src` folder. Please check the README file inside `src` for more information.
+
 ## check_bme680
 The plugin itself is run through a monitoring agent (e.g. NRPE) and reads the last (current) line of the log file (default: /var/log/bsec_bme680.log). 
