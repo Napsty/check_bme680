@@ -12,3 +12,10 @@ To compile bsec_bme680, the Bosch BSEC libary (a closed-source library) is neede
 
 ## check_bme680
 The plugin itself is run through a monitoring agent (e.g. NRPE) and reads the last (current) line of the log file (default: `/var/log/bsec_bme680.log`). 
+
+### nrpe example
+NRPE command definition in /etc/nagios/nrpe_local.cfg:
+
+```
+command[check_vocsensor]=/usr/lib/nagios/plugins/check_bme680.sh
+```
